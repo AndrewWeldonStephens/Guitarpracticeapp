@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const resultsContainer = document.getElementById('results-container');
     const timerDisplay = document.getElementById('timer-display');
     const timerButtons = document.querySelectorAll('.timer-button');
+    const beepSound = document.getElementById('beep-sound');
     let countdownTimer;
 
     practiceButton.addEventListener('click', function() {
@@ -36,6 +37,7 @@ document.addEventListener('DOMContentLoaded', function() {
             if (secondsLeft < 0) {
                 clearInterval(countdownTimer);
                 timerDisplay.textContent = 'Timer expired!';
+                beepSound.play(); // Play beep sound
                 return;
             }
             displayTimeLeft(secondsLeft);
